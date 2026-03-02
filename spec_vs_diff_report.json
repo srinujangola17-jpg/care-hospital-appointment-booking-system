@@ -1,0 +1,123 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-03-02T04:40:41.252Z",
+  "summary": "The diff implements most requirements but has several notable gaps. The Motoko backend uses an authorization/access-control mixin that restricts getAppointments (getAllAppointments) to admins only and does not expose a public getAppointments function, which conflicts with REQ-10. Stable storage for canister upgrades is not implemented in the backend. The booking form requires Internet Identity authentication, effectively gating REQ-5 behind login. Framer Motion is not used anywhere — animations are implemented via CSS/IntersectionObserver instead. Several hallucinated features are present including Internet Identity integration, ProfileSetupModal, user profile save/get system, and an admin-only getAllAppointments function.",
+  "missing_requirements": [
+    {
+      "id": "REQ-2",
+      "requirement": "Use Framer Motion for entrance animations in the hero section",
+      "reason": "The HeroSection uses CSS animation classes (hero-fade-in, hero-fade-in-delay-1, etc.) and a custom useInView hook, not Framer Motion. No Framer Motion import is present in HeroSection.tsx.",
+      "evidence": [
+        "frontend/src/components/HeroSection.tsx",
+        "frontend/src/lib/useInView.ts"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "requirement": "Animate department cards on hover using Framer Motion",
+      "reason": "DepartmentsSection uses CSS hover classes (hover:-translate-y-2, hover:scale-[1.02]) and IntersectionObserver-based scroll animations, not Framer Motion.",
+      "evidence": [
+        "frontend/src/components/DepartmentsSection.tsx"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "requirement": "Appointment booking form should be accessible without authentication; form should not require login",
+      "reason": "BookingSection gates the form behind Internet Identity authentication. Unauthenticated users see a lock screen with a login prompt instead of the booking form. The spec states no user authentication system is required.",
+      "evidence": [
+        "frontend/src/components/BookingSection.tsx"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "requirement": "Apply Framer Motion scroll-triggered entrance animations to feature cards",
+      "reason": "FeaturesSection uses a custom useInView hook with CSS animation classes, not Framer Motion.",
+      "evidence": [
+        "frontend/src/components/FeaturesSection.tsx",
+        "frontend/src/lib/useInView.ts"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "requirement": "getAppointments function returns all stored appointments",
+      "reason": "The backend exposes getAllAppointments which is restricted to admin-only via AccessControl check. There is no public getAppointments function as specified.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "requirement": "Appointments are persisted across canister upgrades using stable storage",
+      "reason": "The backend uses Map.empty and var nextId without stable var declarations, so data will not survive canister upgrades.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Internet Identity authentication integration with login/logout functionality wired to the booking form and profile system",
+      "reason": "The build request explicitly lists user authentication as a non-goal and states Login/Register buttons are UI-only. The implementation fully wires up Internet Identity and gates the booking form behind login.",
+      "evidence": [
+        "frontend/src/components/BookingSection.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/hooks/useActor.ts"
+      ]
+    },
+    {
+      "description": "ProfileSetupModal component that prompts authenticated users to set up a name and email profile",
+      "reason": "No profile setup modal was requested. This is an extra feature tied to the unauthorized authentication system.",
+      "evidence": [
+        "frontend/src/components/ProfileSetupModal.tsx",
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "description": "User profile save and retrieve system in backend including UserProfile type, saveCallerUserProfile, getCallerUserProfile, and getUserProfile functions",
+      "reason": "The spec only requires appointment booking functions in the backend. User profile management was not requested.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/hooks/useGetCallerUserProfile.ts",
+        "frontend/src/hooks/useQueries.ts"
+      ]
+    },
+    {
+      "description": "Admin-only access control with MixinAuthorization and AccessControl restricting appointment retrieval",
+      "reason": "The spec requests simple public appointment functions. Admin access control was not requested and conflicts with the spec requirement for a public getAppointments function.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "confidence": 0.82,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/BookingSection.tsx",
+    "frontend/src/components/ContactSection.tsx",
+    "frontend/src/components/DepartmentsSection.tsx",
+    "frontend/src/components/DoctorCard.tsx",
+    "frontend/src/components/DoctorsSection.tsx",
+    "frontend/src/components/FeaturesSection.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/Header.tsx",
+    "frontend/src/components/HeroSection.tsx",
+    "frontend/src/components/ProfileSetupModal.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useGetCallerUserProfile.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/lib/useInView.ts",
+    "frontend/src/main.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

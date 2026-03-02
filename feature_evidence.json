@@ -1,0 +1,189 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-implement-a-sticky-glassmorphism-header-with-the-care-hospital-logo-icon-text-on-the-left-navigation-links-home-about-doctors-departments-book-appointment-contact-in-the-center-right-and-login-register-and-emergency-highlighted-red-buttons-on-the-right-include-a-mobile-hamburger-menu-that-opens-a-smooth-slide-in-drawer",
+      "featureTitle": "Implement a sticky glassmorphism header with the CARE HOSPITAL logo (icon + text) on the left, navigation links (Home, About, Doctors, Departments, Book Appointment, Contact) in the center/right, and Login, Register, and Emergency (highlighted red) buttons on the right. Include a mobile hamburger menu that opens a smooth slide-in drawer.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/BookingSection.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/components/ProfileSetupModal.tsx",
+        "frontend/src/hooks/useGetCallerUserProfile.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-an-animated-hero-section-with-the-headline-your-health-our-priority-subtext-book-appointments-with-top-doctors-instantly-two-cta-buttons-book-appointment-primary-and-view-doctors-secondary-and-a-doctor-hospital-illustration-image-on-the-right-side-use-framer-motion-for-entrance-animations",
+      "featureTitle": "Build an animated hero section with the headline 'Your Health, Our Priority', subtext 'Book appointments with top doctors instantly.', two CTA buttons ('Book Appointment' primary and 'View Doctors' secondary), and a doctor/hospital illustration image on the right side. Use Framer Motion for entrance animations.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/HeroSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-doctors-section-with-a-3-column-grid-responsive-displaying-doctor-cards-each-card-shows-a-doctor-photo-name-specialization-years-of-experience-star-rating-display-and-a-book-now-button-include-at-least-6-sample-doctors-with-varied-specializations",
+      "featureTitle": "Create a Doctors section with a 3-column grid (responsive) displaying doctor cards. Each card shows a doctor photo, name, specialization, years of experience, star rating display, and a 'Book Now' button. Include at least 6 sample doctors with varied specializations.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/DoctorCard.tsx",
+        "frontend/src/components/DoctorsSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-departments-section-with-animated-hover-cards-for-cardiology-neurology-orthopedics-pediatrics-dermatology-and-general-medicine-each-card-should-include-a-relevant-icon-and-animate-on-hover-using-framer-motion",
+      "featureTitle": "Build a Departments section with animated hover cards for: Cardiology, Neurology, Orthopedics, Pediatrics, Dermatology, and General Medicine. Each card should include a relevant icon and animate on hover using Framer Motion.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/DepartmentsSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-an-appointment-booking-form-section-with-fields-patient-name-email-phone-select-doctor-dropdown-select-department-dropdown-date-picker-and-time-slot-selector-include-client-side-field-validation-and-display-a-success-message-upon-valid-form-submission-store-submitted-appointments-in-the-backend",
+      "featureTitle": "Implement an appointment booking form section with fields: Patient Name, Email, Phone, Select Doctor (dropdown), Select Department (dropdown), Date Picker, and Time Slot selector. Include client-side field validation and display a success message upon valid form submission. Store submitted appointments in the backend.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/BookingSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-features-section-displaying-4-animated-feature-cards-24-7-emergency-support-experienced-doctors-online-reports-and-easy-appointment-booking-each-card-should-include-a-relevant-icon-and-a-brief-description-with-framer-motion-animations-on-scroll",
+      "featureTitle": "Add a Features section displaying 4 animated feature cards: '24/7 Emergency Support', 'Experienced Doctors', 'Online Reports', and 'Easy Appointment Booking'. Each card should include a relevant icon and a brief description, with Framer Motion animations on scroll.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/FeaturesSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-contact-section-with-a-google-maps-iframe-embed-showing-a-sample-hospital-location-contact-details-address-phone-email-working-hours-and-a-quick-contact-form-with-name-email-and-message-fields",
+      "featureTitle": "Build a Contact section with a Google Maps iframe embed showing a sample hospital location, contact details (address, phone, email, working hours), and a quick contact form with Name, Email, and Message fields.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ContactSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-professional-multi-column-footer-with-a-dark-blue-background-and-white-text-include-4-columns-1-about-hospital-with-links-for-about-us-our-services-careers-blog-2-quick-links-for-book-appointment-find-doctor-departments-emergency-3-contact-info-with-address-phone-email-working-hours-4-social-media-icons-for-facebook-instagram-twitter-linkedin-include-a-bottom-bar-with-2026-care-hospital-all-rights-reserved-and-privacy-policy-terms-conditions-links",
+      "featureTitle": "Create a professional multi-column footer with a dark blue background and white text. Include 4 columns: (1) About Hospital with links for About Us, Our Services, Careers, Blog; (2) Quick Links for Book Appointment, Find Doctor, Departments, Emergency; (3) Contact Info with address, phone, email, working hours; (4) Social Media icons for Facebook, Instagram, Twitter, LinkedIn. Include a bottom bar with '© 2026 CARE HOSPITAL. All Rights Reserved.' and Privacy Policy / Terms & Conditions links.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Footer.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-consistent-medical-design-theme-across-the-entire-application-white-blue-and-light-green-gradient-color-palette-poppins-or-inter-font-soft-shadows-and-rounded-cards-smooth-hover-effects-on-interactive-elements-and-fully-mobile-first-responsive-layout-with-no-overflow-issues",
+      "featureTitle": "Apply a consistent medical design theme across the entire application: white, blue, and light green gradient color palette; Poppins or Inter font; soft shadows and rounded cards; smooth hover effects on interactive elements; and fully mobile-first responsive layout with no overflow issues.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

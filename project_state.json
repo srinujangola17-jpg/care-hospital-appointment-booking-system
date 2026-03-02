@@ -1,0 +1,151 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "A modern, fully responsive professional healthcare website — CARE HOSPITAL APPOINTMENT BOOKING SYSTEM — built with React.js, Tailwind CSS, Framer Motion, and React Router. Features a glassmorphism sticky navbar, animated hero section, doctors grid, departments section, appointment booking form, features section, contact section with map, and a multi-column footer. Medical theme with white, blue, and light green gradients.",
+  "architectural_notes": [
+    "Frontend: React.js with React Router for routing",
+    "Styling: Tailwind CSS with Framer Motion for animations",
+    "Icons: React Icons / Heroicons",
+    "Backend: Python only",
+    "Design: White + Blue + Light Green medical theme, Poppins/Inter font, mobile-first responsive"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Professional medical illustration showing a friendly doctor in a white coat with a stethoscope, standing next to a hospital building, clean flat-style vector art with blue and light green tones (hero-doctor.dim_600x500.png)\n- CARE HOSPITAL circular logo icon with a red cross medical symbol and teal/blue color scheme, flat minimal design (care-hospital-logo.dim_128x128.png)",
+  "existing_features": [
+    {
+      "id": "feature-implement-a-sticky-glassmorphism-header-with-the-care-hospital-logo-icon-text-on-the-left-navigation-links-home-about-doctors-departments-book-appointment-contact-in-the-center-right-and-login-register-and-emergency-highlighted-red-buttons-on-the-right-include-a-mobile-hamburger-menu-that-opens-a-smooth-slide-in-drawer",
+      "title": "Implement a sticky glassmorphism header with the CARE HOSPITAL logo (icon + text) on the left, navigation links (Home, About, Doctors, Departments, Book Appointment, Contact) in the center/right, and Login, Register, and Emergency (highlighted red) buttons on the right. Include a mobile hamburger menu that opens a smooth slide-in drawer.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-animated-hero-section-with-the-headline-your-health-our-priority-subtext-book-appointments-with-top-doctors-instantly-two-cta-buttons-book-appointment-primary-and-view-doctors-secondary-and-a-doctor-hospital-illustration-image-on-the-right-side-use-framer-motion-for-entrance-animations",
+      "title": "Build an animated hero section with the headline 'Your Health, Our Priority', subtext 'Book appointments with top doctors instantly.', two CTA buttons ('Book Appointment' primary and 'View Doctors' secondary), and a doctor/hospital illustration image on the right side. Use Framer Motion for entrance animations.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-doctors-section-with-a-3-column-grid-responsive-displaying-doctor-cards-each-card-shows-a-doctor-photo-name-specialization-years-of-experience-star-rating-display-and-a-book-now-button-include-at-least-6-sample-doctors-with-varied-specializations",
+      "title": "Create a Doctors section with a 3-column grid (responsive) displaying doctor cards. Each card shows a doctor photo, name, specialization, years of experience, star rating display, and a 'Book Now' button. Include at least 6 sample doctors with varied specializations.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-departments-section-with-animated-hover-cards-for-cardiology-neurology-orthopedics-pediatrics-dermatology-and-general-medicine-each-card-should-include-a-relevant-icon-and-animate-on-hover-using-framer-motion",
+      "title": "Build a Departments section with animated hover cards for: Cardiology, Neurology, Orthopedics, Pediatrics, Dermatology, and General Medicine. Each card should include a relevant icon and animate on hover using Framer Motion.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-an-appointment-booking-form-section-with-fields-patient-name-email-phone-select-doctor-dropdown-select-department-dropdown-date-picker-and-time-slot-selector-include-client-side-field-validation-and-display-a-success-message-upon-valid-form-submission-store-submitted-appointments-in-the-backend",
+      "title": "Implement an appointment booking form section with fields: Patient Name, Email, Phone, Select Doctor (dropdown), Select Department (dropdown), Date Picker, and Time Slot selector. Include client-side field validation and display a success message upon valid form submission. Store submitted appointments in the backend.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-features-section-displaying-4-animated-feature-cards-24-7-emergency-support-experienced-doctors-online-reports-and-easy-appointment-booking-each-card-should-include-a-relevant-icon-and-a-brief-description-with-framer-motion-animations-on-scroll",
+      "title": "Add a Features section displaying 4 animated feature cards: '24/7 Emergency Support', 'Experienced Doctors', 'Online Reports', and 'Easy Appointment Booking'. Each card should include a relevant icon and a brief description, with Framer Motion animations on scroll.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-contact-section-with-a-google-maps-iframe-embed-showing-a-sample-hospital-location-contact-details-address-phone-email-working-hours-and-a-quick-contact-form-with-name-email-and-message-fields",
+      "title": "Build a Contact section with a Google Maps iframe embed showing a sample hospital location, contact details (address, phone, email, working hours), and a quick contact form with Name, Email, and Message fields.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-professional-multi-column-footer-with-a-dark-blue-background-and-white-text-include-4-columns-1-about-hospital-with-links-for-about-us-our-services-careers-blog-2-quick-links-for-book-appointment-find-doctor-departments-emergency-3-contact-info-with-address-phone-email-working-hours-4-social-media-icons-for-facebook-instagram-twitter-linkedin-include-a-bottom-bar-with-2026-care-hospital-all-rights-reserved-and-privacy-policy-terms-conditions-links",
+      "title": "Create a professional multi-column footer with a dark blue background and white text. Include 4 columns: (1) About Hospital with links for About Us, Our Services, Careers, Blog; (2) Quick Links for Book Appointment, Find Doctor, Departments, Emergency; (3) Contact Info with address, phone, email, working hours; (4) Social Media icons for Facebook, Instagram, Twitter, LinkedIn. Include a bottom bar with '© 2026 CARE HOSPITAL. All Rights Reserved.' and Privacy Policy / Terms & Conditions links.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-consistent-medical-design-theme-across-the-entire-application-white-blue-and-light-green-gradient-color-palette-poppins-or-inter-font-soft-shadows-and-rounded-cards-smooth-hover-effects-on-interactive-elements-and-fully-mobile-first-responsive-layout-with-no-overflow-issues",
+      "title": "Apply a consistent medical design theme across the entire application: white, blue, and light green gradient color palette; Poppins or Inter font; soft shadows and rounded cards; smooth hover effects on interactive elements; and fully mobile-first responsive layout with no overflow issues.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Sticky glassmorphism header with logo, nav links, login/register/emergency buttons, and mobile hamburger drawer",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Animated hero section with headline, subtext, two CTA buttons, and doctor/hospital illustration",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Doctors section with 3-column grid cards showing image, name, specialization, experience, rating, and Book Now button",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Departments section with animated hover cards for Cardiology, Neurology, Orthopedics, Pediatrics, Dermatology, General Medicine",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Appointment booking form with patient details, doctor/department selectors, date picker, time slot, validation, and success message",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Features section with 4 animated cards: 24/7 Emergency, Experienced Doctors, Online Reports, Easy Booking",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Contact section with Google Map embed, contact details, and quick contact form",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Multi-column footer with About, Quick Links, Contact Info, Social Media columns, dark blue background, and copyright line",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Implement a Motoko backend actor to store and retrieve appointment bookings. The actor should expose functions to: submit a new appointment (with patient name, email, phone, doctor, department, date, time slot), retrieve all appointments, and retrieve appointments by email.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "CARE HOSPITAL APPOINTMENT BOOKING SYSTEM",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

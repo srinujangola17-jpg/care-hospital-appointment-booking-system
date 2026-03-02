@@ -1,0 +1,18 @@
+{
+  "frontend/src/index.css": "Global styles with Poppins font, OKLCH medical color system, glassmorphism utilities, button/section styles, and all CSS keyframe animations replacing framer-motion (hero entrance, scroll fade-in, drawer slide, modal scale, float, pulse).",
+  "frontend/tailwind.config.js": "Extended Tailwind config with Poppins font family, hospital-themed color tokens (blue, green, navy, red), custom shadows, border radii, and float/pulse animations.",
+  "frontend/src/App.tsx": "Root app component that composes all page sections (Hero, Features, Doctors, Departments, Booking, Contact), handles auth state, and conditionally shows the ProfileSetupModal.",
+  "frontend/src/hooks/useGetCallerUserProfile.ts": "Custom React Query hook to fetch the authenticated user's profile from the backend, with proper loading state management to prevent modal flash.",
+  "frontend/src/hooks/useQueries.ts": "Central hooks file with React Query mutations and queries for user profile (get/save) and appointment submission/retrieval from the backend.",
+  "frontend/src/components/Header.tsx": "Sticky glassmorphism header with logo, desktop nav, auth buttons, Emergency button, and mobile slide-in drawer using CSS animations instead of framer-motion.",
+  "frontend/src/components/HeroSection.tsx": "Animated hero section using CSS keyframe classes (hero-fade-in, hero-slide-right, animate-float) replacing framer-motion, with headline, CTAs, stats, and floating doctor illustration.",
+  "frontend/src/components/FeaturesSection.tsx": "Features section with 4 cards using the custom useInView hook and CSS animate-on-scroll classes for scroll-triggered entrance animations, replacing framer-motion.",
+  "frontend/src/components/DoctorCard.tsx": "Reusable doctor card with photo, name, specialization, rating stars, experience, and Book Now button; hover effects via CSS transitions only, no framer-motion.",
+  "frontend/src/components/DoctorsSection.tsx": "Doctors grid section using useInView hook and CSS animate-on-scroll stagger classes for scroll animations, displaying 6 DoctorCard components.",
+  "frontend/src/components/DepartmentsSection.tsx": "Departments section with 6 specialty cards using useInView and CSS animate-on-scroll-scale classes for scroll-triggered scale animations, replacing framer-motion.",
+  "frontend/src/components/BookingSection.tsx": "Appointment booking form with auth guard, 7 validated fields, backend integration, success state with CSS success-pop animation, and useInView scroll animations.",
+  "frontend/src/components/ContactSection.tsx": "Contact section with Google Maps embed, contact info cards, and quick contact form; uses useInView with CSS animate-on-scroll-left/right classes replacing framer-motion.",
+  "frontend/src/components/Footer.tsx": "Professional 4-column footer with dark navy background, About/Quick Links/Contact Info/Social Media columns, emergency CTA, copyright bar, and caffeine.ai attribution.",
+  "frontend/src/components/ProfileSetupModal.tsx": "First-login profile setup modal using CSS modal-scale-in and modal-overlay-in animations instead of framer-motion AnimatePresence, with name/email form and backend save.",
+  "frontend/src/lib/useInView.ts": "Custom React hook using IntersectionObserver to detect when elements enter the viewport, returning a ref and boolean `inView` state for scroll-triggered CSS animations."
+}

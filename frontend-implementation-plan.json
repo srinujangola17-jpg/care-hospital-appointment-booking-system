@@ -1,0 +1,274 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Care Hospital Appointment Booking System - Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Implement sticky glassmorphism header with navigation and mobile responsive menu",
+      "acceptanceCriteria": [
+        "Header remains fixed at the top while scrolling",
+        "Glassmorphism effect (frosted glass background) is visible on the navbar",
+        "Logo with hospital icon and 'CARE HOSPITAL' text appears on the left",
+        "All 6 nav links render and scroll/navigate to their respective sections",
+        "Login and Register buttons are visible on desktop",
+        "Emergency button is highlighted in red",
+        "On mobile, a hamburger icon appears and opens an animated slide-in drawer menu"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "create",
+          "description": "Create Header component with sticky positioning, glassmorphism styling (backdrop-blur-md, bg-white/80), CARE HOSPITAL logo using the generated image at frontend/public/assets/generated/care-hospital-logo.dim_128x128.png, navigation links (Home, About, Doctors, Departments, Book Appointment, Contact), Login/Register buttons, Emergency button with red highlight, and mobile hamburger menu with animated slide-in drawer using Framer Motion"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render Header component at the top of the application layout, ensure it appears above all other sections"
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Build animated hero section with headline, CTAs, and doctor illustration",
+      "acceptanceCriteria": [
+        "Headline and subtext render prominently on the left",
+        "Both CTA buttons are present and functional (scroll to respective sections)",
+        "A doctor/hospital illustration image is displayed on the right side",
+        "Entrance animations play on page load using Framer Motion",
+        "Section is fully responsive (stacks vertically on mobile)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/HeroSection.tsx",
+          "operation": "create",
+          "description": "Create HeroSection component with headline 'Your Health, Our Priority', subtext 'Book appointments with top doctors instantly.', two CTA buttons ('Book Appointment' primary blue and 'View Doctors' secondary), doctor illustration using the generated image at frontend/public/assets/generated/hero-doctor.dim_600x500.png on the right, Framer Motion entrance animations (fade-in and slide-up), responsive flex layout that stacks vertically on mobile"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render HeroSection component below the Header in the main layout"
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create Doctors section with responsive grid of doctor cards",
+      "acceptanceCriteria": [
+        "At least 6 doctor cards are displayed in a 3-column grid on desktop",
+        "Each card shows photo, name, specialization, experience, star rating, and Book Now button",
+        "Grid collapses to 2 columns on tablet and 1 column on mobile",
+        "Cards have soft shadows and rounded corners",
+        "Hover effects are visible on each card"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/DoctorsSection.tsx",
+          "operation": "create",
+          "description": "Create DoctorsSection component with responsive grid (grid-cols-1 md:grid-cols-2 lg:grid-cols-3), at least 6 doctor cards with sample data including photo placeholders, name, specialization (varied: Cardiology, Neurology, Orthopedics, Pediatrics, Dermatology, General Medicine), years of experience, star rating display, Book Now button, soft shadows (shadow-md), rounded corners (rounded-lg), and hover effects (hover:shadow-xl transition)"
+        },
+        {
+          "path": "frontend/src/components/DoctorCard.tsx",
+          "operation": "create",
+          "description": "Create reusable DoctorCard component accepting doctor props (photo, name, specialization, experience, rating) and rendering card with consistent medical theme styling, hover scale effect, and Book Now button that navigates to booking section"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render DoctorsSection component in the main layout below HeroSection, add id='doctors' for scroll navigation"
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Build Departments section with animated hover cards",
+      "acceptanceCriteria": [
+        "All 6 departments are displayed as cards with icons",
+        "Hover animation is applied to each card",
+        "Cards are arranged in a responsive grid",
+        "Each card displays the department name and a relevant medical icon"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/DepartmentsSection.tsx",
+          "operation": "create",
+          "description": "Create DepartmentsSection component with responsive grid displaying 6 department cards: Cardiology, Neurology, Orthopedics, Pediatrics, Dermatology, General Medicine. Each card includes relevant Lucide React icons (Heart, Brain, Bone, Baby, Sparkles, Stethoscope), department name, hover scale animation using Framer Motion, soft shadows, rounded corners, and blue-to-green gradient accents"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render DepartmentsSection component in the main layout below DoctorsSection, add id='departments' for scroll navigation"
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Implement appointment booking form with validation and backend integration",
+      "acceptanceCriteria": [
+        "All 7 form fields are present and functional",
+        "Client-side validation highlights missing or invalid fields",
+        "A success confirmation message is shown after valid submission",
+        "Doctor and Department dropdowns are populated with available options",
+        "Date picker prevents selection of past dates",
+        "Submitted appointments are persisted in the backend",
+        "Form resets after successful submission"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/BookingSection.tsx",
+          "operation": "create",
+          "description": "Create BookingSection component with appointment form containing fields: Patient Name (text input), Email (email input with validation), Phone (tel input), Select Doctor (dropdown populated from DoctorsSection data), Select Department (dropdown with 6 departments), Date Picker (prevents past dates using min attribute), Time Slot selector (dropdown with common time slots). Implement client-side validation using React Hook Form or native validation, display error messages for invalid fields, show success message on submission, call backend submitAppointment function via useActor hook, reset form after successful submission. Use the authorization component to require user login before booking."
+        },
+        {
+          "path": "frontend/src/hooks/useSubmitAppointment.ts",
+          "operation": "create",
+          "description": "Create custom hook useSubmitAppointment using React Query's useMutation to call backend submitAppointment function. Handle loading states, success callback to show confirmation message, error handling for failed submissions. Verify the authorization component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render BookingSection component in the main layout below DepartmentsSection, add id='book-appointment' for scroll navigation. Ensure the section is only accessible to authenticated users by wrapping with authorization check."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add Features section with animated feature cards",
+      "acceptanceCriteria": [
+        "All 4 feature cards are displayed in a responsive grid",
+        "Each card has an icon, title, and short description",
+        "Scroll-triggered entrance animations are applied via Framer Motion",
+        "Cards have consistent styling with soft shadows and rounded corners"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/FeaturesSection.tsx",
+          "operation": "create",
+          "description": "Create FeaturesSection component with responsive grid displaying 4 feature cards: '24/7 Emergency Support' (Clock icon), 'Experienced Doctors' (UserCheck icon), 'Online Reports' (FileText icon), 'Easy Appointment Booking' (Calendar icon). Each card includes Lucide React icon, title, brief description, scroll-triggered entrance animations using Framer Motion's whileInView, soft shadows (shadow-lg), rounded corners (rounded-xl), and consistent medical theme styling with blue/green accents"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render FeaturesSection component in the main layout below BookingSection"
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Build Contact section with map, contact details, and contact form",
+      "acceptanceCriteria": [
+        "A Google Maps iframe is embedded showing a placeholder hospital location",
+        "Contact details (address, phone, email, working hours) are displayed",
+        "A contact form with Name, Email, and Message fields is present",
+        "Section is responsive and displays correctly on all screen sizes"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ContactSection.tsx",
+          "operation": "create",
+          "description": "Create ContactSection component with two-column layout: left side contains Google Maps iframe embed (using static iframe with sample hospital location coordinates), right side displays contact details (address with MapPin icon, phone with Phone icon, email with Mail icon, working hours with Clock icon) and quick contact form with Name, Email, Message textarea fields. Form includes client-side validation and submit handler. Responsive layout stacks vertically on mobile. Use medical theme colors and styling."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render ContactSection component in the main layout below FeaturesSection, add id='contact' for scroll navigation"
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Create professional multi-column footer with links and social media icons",
+      "acceptanceCriteria": [
+        "Footer has a dark blue background with white text",
+        "All 4 columns are present with correct content",
+        "Social media icons are visible and styled",
+        "Bottom bar shows copyright text and policy links",
+        "Footer collapses gracefully on mobile (stacked columns)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "create",
+          "description": "Create Footer component with dark blue background (bg-blue-900), white text (text-white), 4-column grid layout: (1) About Hospital with links (About Us, Our Services, Careers, Blog), (2) Quick Links (Book Appointment, Find Doctor, Departments, Emergency), (3) Contact Info (address, phone, email, working hours with icons), (4) Social Media icons (Facebook, Instagram, Twitter, LinkedIn using Lucide React icons). Include bottom bar with '© 2026 CARE HOSPITAL. All Rights Reserved.' and Privacy Policy / Terms & Conditions links. Responsive grid collapses to stacked columns on mobile."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render Footer component at the bottom of the application layout after all sections"
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Apply consistent medical design theme across the application",
+      "acceptanceCriteria": [
+        "White, blue, and light green gradient palette is used consistently throughout",
+        "Poppins or Inter font is applied globally",
+        "All cards and containers use soft shadows and rounded corners",
+        "Hover effects are present on all interactive elements",
+        "No horizontal overflow issues on any screen size",
+        "Layout is properly spaced and readable on mobile, tablet, and desktop"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Import Poppins or Inter font from Google Fonts, apply font-family globally to body, define CSS custom properties for medical theme colors (white, blue shades, light green gradient), ensure base styles prevent horizontal overflow (overflow-x: hidden), set consistent spacing and typography scales"
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with medical color palette (blue-primary, blue-secondary, green-accent, white, light grays), set Poppins or Inter as default font family, configure custom shadows for soft effects, add rounded corner utilities, configure hover transition defaults, ensure responsive breakpoints are properly configured"
+        }
+      ]
+    },
+    {
+      "id": "REQ-1",
+      "summary": "Integrate authentication UI with Internet Identity for booking access",
+      "acceptanceCriteria": [
+        "Login and Register buttons trigger Internet Identity authentication flow",
+        "User profile setup modal appears on first login to collect user name and email",
+        "Authenticated users can access booking section",
+        "User profile name is displayed instead of principal ID",
+        "Logout clears cached data and returns to guest view"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/LoginButton.tsx",
+          "operation": "create",
+          "description": "Create LoginButton component using the authorization component's useInternetIdentity hook to handle login/logout. Display 'Login' when not authenticated, 'Logout' when authenticated, handle loading states during authentication. Use the authorization component to manage authentication state. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/ProfileSetupModal.tsx",
+          "operation": "create",
+          "description": "Create ProfileSetupModal component that appears when user logs in for the first time (getCallerUserProfile returns null). Modal contains form to collect user name and email, calls saveCallerUserProfile to persist profile. Implement proper loading state handling to prevent modal flash as described in authorization component usage. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useGetCallerUserProfile.ts",
+          "operation": "create",
+          "description": "Create custom hook useGetCallerUserProfile using React Query to fetch current user's profile via getCallerUserProfile backend function. Implement proper loading state management to prevent modal flash, handle actor dependency as specified in authorization component usage. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useSaveCallerUserProfile.ts",
+          "operation": "create",
+          "description": "Create custom hook useSaveCallerUserProfile using React Query's useMutation to save user profile via saveCallerUserProfile backend function. Handle success callback to invalidate and refetch profile query. Verify the authorization component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Replace placeholder Login and Register buttons with LoginButton component. Display user profile name when authenticated instead of Login button. Add ProfileSetupModal component that conditionally renders based on authentication and profile status."
+        },
+        {
+          "path": "frontend/src/components/BookingSection.tsx",
+          "operation": "modify",
+          "description": "Add authentication guard to BookingSection: show message prompting user to login if not authenticated, only render booking form for authenticated users. Use useInternetIdentity hook to check authentication status."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap application with ProfileSetupModal at root level to handle first-time user profile setup globally"
+        }
+      ]
+    }
+  ]
+}

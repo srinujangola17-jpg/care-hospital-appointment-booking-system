@@ -1,0 +1,242 @@
+{
+  "kind": "build_request",
+  "title": "Care Hospital Appointment Booking System",
+  "projectName": "Care Hospital",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Implement a sticky glassmorphism header with the CARE HOSPITAL logo (icon + text) on the left, navigation links (Home, About, Doctors, Departments, Book Appointment, Contact) in the center/right, and Login, Register, and Emergency (highlighted red) buttons on the right. Include a mobile hamburger menu that opens a smooth slide-in drawer.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Glassmorphism navbar",
+          "HEADER (Sticky + Responsive)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Header remains fixed at the top while scrolling",
+        "Glassmorphism effect (frosted glass background) is visible on the navbar",
+        "Logo with hospital icon and 'CARE HOSPITAL' text appears on the left",
+        "All 6 nav links render and scroll/navigate to their respective sections",
+        "Login and Register buttons are visible on desktop",
+        "Emergency button is highlighted in red",
+        "On mobile, a hamburger icon appears and opens an animated slide-in drawer menu"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Build an animated hero section with the headline 'Your Health, Our Priority', subtext 'Book appointments with top doctors instantly.', two CTA buttons ('Book Appointment' primary and 'View Doctors' secondary), and a doctor/hospital illustration image on the right side. Use Framer Motion for entrance animations.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "HERO SECTION",
+          "Your Health, Our Priority"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Headline and subtext render prominently on the left",
+        "Both CTA buttons are present and functional (scroll to respective sections)",
+        "A doctor/hospital illustration image is displayed on the right side",
+        "Entrance animations play on page load using Framer Motion",
+        "Section is fully responsive (stacks vertically on mobile)"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create a Doctors section with a 3-column grid (responsive) displaying doctor cards. Each card shows a doctor photo, name, specialization, years of experience, star rating display, and a 'Book Now' button. Include at least 6 sample doctors with varied specializations.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "DOCTORS SECTION",
+          "Grid layout (3 per row desktop)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "At least 6 doctor cards are displayed in a 3-column grid on desktop",
+        "Each card shows photo, name, specialization, experience, star rating, and Book Now button",
+        "Grid collapses to 2 columns on tablet and 1 column on mobile",
+        "Cards have soft shadows and rounded corners",
+        "Hover effects are visible on each card"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Build a Departments section with animated hover cards for: Cardiology, Neurology, Orthopedics, Pediatrics, Dermatology, and General Medicine. Each card should include a relevant icon and animate on hover using Framer Motion.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "DEPARTMENTS SECTION",
+          "Hover animation with icons"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All 6 departments are displayed as cards with icons",
+        "Hover animation is applied to each card",
+        "Cards are arranged in a responsive grid",
+        "Each card displays the department name and a relevant medical icon"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Implement an appointment booking form section with fields: Patient Name, Email, Phone, Select Doctor (dropdown), Select Department (dropdown), Date Picker, and Time Slot selector. Include client-side field validation and display a success message upon valid form submission. Store submitted appointments in the backend.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "APPOINTMENT BOOKING SECTION",
+          "Form should: Validate fields, Show success message"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All 7 form fields are present and functional",
+        "Client-side validation highlights missing or invalid fields",
+        "A success confirmation message is shown after valid submission",
+        "Doctor and Department dropdowns are populated with available options",
+        "Date picker prevents selection of past dates",
+        "Submitted appointments are persisted in the backend",
+        "Form resets after successful submission"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Add a Features section displaying 4 animated feature cards: '24/7 Emergency Support', 'Experienced Doctors', 'Online Reports', and 'Easy Appointment Booking'. Each card should include a relevant icon and a brief description, with Framer Motion animations on scroll.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "FEATURES SECTION",
+          "4 Feature Cards",
+          "With icons and animation"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All 4 feature cards are displayed in a responsive grid",
+        "Each card has an icon, title, and short description",
+        "Scroll-triggered entrance animations are applied via Framer Motion",
+        "Cards have consistent styling with soft shadows and rounded corners"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Build a Contact section with a Google Maps iframe embed showing a sample hospital location, contact details (address, phone, email, working hours), and a quick contact form with Name, Email, and Message fields.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "CONTACT SECTION",
+          "Google Map embed",
+          "Contact details",
+          "Quick contact form"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A Google Maps iframe is embedded showing a placeholder hospital location",
+        "Contact details (address, phone, email, working hours) are displayed",
+        "A contact form with Name, Email, and Message fields is present",
+        "Section is responsive and displays correctly on all screen sizes"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Create a professional multi-column footer with a dark blue background and white text. Include 4 columns: (1) About Hospital with links for About Us, Our Services, Careers, Blog; (2) Quick Links for Book Appointment, Find Doctor, Departments, Emergency; (3) Contact Info with address, phone, email, working hours; (4) Social Media icons for Facebook, Instagram, Twitter, LinkedIn. Include a bottom bar with '© 2026 CARE HOSPITAL. All Rights Reserved.' and Privacy Policy / Terms & Conditions links.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "FOOTER (Beautiful + Professional)",
+          "Dark blue background with white text"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Footer has a dark blue background with white text",
+        "All 4 columns are present with correct content",
+        "Social media icons are visible and styled",
+        "Bottom bar shows copyright text and policy links",
+        "Footer collapses gracefully on mobile (stacked columns)"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Apply a consistent medical design theme across the entire application: white, blue, and light green gradient color palette; Poppins or Inter font; soft shadows and rounded cards; smooth hover effects on interactive elements; and fully mobile-first responsive layout with no overflow issues.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Clean medical theme (White + Blue + Light Green gradient)",
+          "Mobile-first design",
+          "Professional UI like Apollo / Practo websites"
+        ]
+      },
+      "acceptanceCriteria": [
+        "White, blue, and light green gradient palette is used consistently throughout",
+        "Poppins or Inter font is applied globally",
+        "All cards and containers use soft shadows and rounded corners",
+        "Hover effects are present on all interactive elements",
+        "No horizontal overflow issues on any screen size",
+        "Layout is properly spaced and readable on mobile, tablet, and desktop"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Implement a Motoko backend actor to store and retrieve appointment bookings. The actor should expose functions to: submit a new appointment (with patient name, email, phone, doctor, department, date, time slot), retrieve all appointments, and retrieve appointments by email.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "APPOINTMENT BOOKING SECTION",
+          "Book Appointment"
+        ]
+      },
+      "acceptanceCriteria": [
+        "submitAppointment function accepts all required booking fields and stores the record",
+        "getAppointments function returns all stored appointments",
+        "getAppointmentsByEmail function returns appointments matching a given email",
+        "Appointments are persisted across canister upgrades using stable storage"
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must use Motoko (single actor) — Python backend is not supported on this platform",
+    "Do not edit any files under frontend/src/hooks/ or frontend/src/components/ui",
+    "Google Maps embed must use a static iframe (no Maps JavaScript API key required)"
+  ],
+  "nonGoals": [
+    "User authentication / login system (Login/Register buttons are UI only)",
+    "Real-time chat or WebSocket features",
+    "SMS or email notification on booking",
+    "Admin dashboard for managing appointments",
+    "Integration with external healthcare APIs"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Professional medical illustration showing a friendly doctor in a white coat with a stethoscope, standing next to a hospital building, clean flat-style vector art with blue and light green tones (hero-doctor.dim_600x500.png)",
+      "CARE HOSPITAL circular logo icon with a red cross medical symbol and teal/blue color scheme, flat minimal design (care-hospital-logo.dim_128x128.png)"
+    ],
+    "edits": []
+  }
+}
